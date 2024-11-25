@@ -7,8 +7,8 @@ def welcome():
     
 welcome()
 
-#
-blood_comp = {
+# Dictionary to save data information about blood compatibility.
+blood_compatibility = {
     "A+": {"gives": ["A+", "AB+"], 
           "receives": ["A+", "A-", "O+", "O-"]},
     
@@ -35,3 +35,9 @@ blood_comp = {
 
 }
 
+def blood_type_validation(blood):
+    if blood in blood_compatibility:
+        return True
+    else:
+        print(f"Blood type {blood} does not exist. Please type again.")
+        return False    
